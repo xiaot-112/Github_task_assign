@@ -66,8 +66,8 @@ const AssignmentSection = () => {
     },
     {
       title: '匹配度',
-        if (index === 0) return <TrophyOutlined style={{ fontSize: 20, color: '#faad14' }} />;
       key: 'match_score',
+      dataIndex: 'match_score',
       width: 200,
       render: (score) => {
         const percentage = Math.round(score * 100);

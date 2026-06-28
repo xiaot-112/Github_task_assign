@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Form, Input, Button, Space, message, Table, Modal, Popconfirm, Slider, Tag } from 'antd';
-import { PlusOutlined, DeleteOutlined, EditOutlined, RobotOutlined, ThunderOutlined } from '@ant-design/icons';
+import { PlusOutlined, DeleteOutlined, EditOutlined, RobotOutlined, ThunderboltOutlined } from '@ant-design/icons';
 import useStore from '../store';
 import { modelAPI } from '../services/api';
 
@@ -102,7 +102,7 @@ const ModelSection = () => {
         <Space>
           <Button 
             type="link" 
-            icon={<ThunderOutlined />} 
+            icon={<ThunderboltOutlined />} 
             onClick={() => handleTest(record)}
             loading={testingModel === record.id}
           >

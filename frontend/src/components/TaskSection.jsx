@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Button, Space, message, Table, Tag, Typography, Empty, Row, Col, Statistic } from 'antd';
-import { SyncOutlined, ThunderboltOutlined, IssueAddOutlined, PullRequestOutlined } from '@ant-design/icons';
+import { SyncOutlined, ThunderboltOutlined, IssuesCloseOutlined, PullRequestOutlined } from '@ant-design/icons';
 import useStore from '../store';
 import { taskAPI, repositoryAPI } from '../services/api';
 
@@ -69,7 +69,7 @@ const TaskSection = () => {
       key: 'source_type',
       render: (type) => {
         const config = {
-          issue: { icon: <IssueAddOutlined />, color: 'green', text: 'Issue' },
+          issue: { icon: <IssuesCloseOutlined />, color: 'green', text: 'Issue' },
           pr: { icon: <PullRequestOutlined />, color: 'blue', text: 'PR' },
         };
         const c = config[type] || config.issue;
