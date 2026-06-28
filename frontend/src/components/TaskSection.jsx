@@ -166,7 +166,7 @@ const TaskSection = () => {
       </Row>
 
       {tasks.length === 0 ? (
-        <Empty description="暂无任务，点击"提取任务"按钮从GitHub仓库获取" />
+        <Empty description='暂无任务，点击"提取任务"按钮从 GitHub 仓库获取' />
       ) : (
         <Table
           columns={columns}

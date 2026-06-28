@@ -46,7 +46,7 @@ const AssignmentSection = () => {
       key: 'rank',
       width: 80,
       render: (_, __, index) => {
-        if (index === 0) return <TrophyOutlined style={{ color: '#gold', fontSize: 20, color: '#faad14' }} />;
+        if (index === 0) return <TrophyOutlined style={{ fontSize: 20, color: '#faad14' }} />;
         if (index === 1) return <TrophyOutlined style={{ fontSize: 18, color: '#bfbfbf' }} />;
         if (index === 2) return <TrophyOutlined style={{ fontSize: 16, color: '#d46b08' }} />;
         return <Text>{index + 1}</Text>;
@@ -66,7 +66,7 @@ const AssignmentSection = () => {
     },
     {
       title: '匹配度',
-      dataIndex: 'match_score',
+        if (index === 0) return <TrophyOutlined style={{ fontSize: 20, color: '#faad14' }} />;
       key: 'match_score',
       width: 200,
       render: (score) => {
