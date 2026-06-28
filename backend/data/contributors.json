@@ -1,0 +1,18 @@
+[
+  {
+    "id": "contrib_1782627457.287608",
+    "name": "张三",
+    "skills": [
+      "JavaScript",
+      "Python",
+      "React"
+    ],
+    "experience_level": "senior",
+    "availability": "full_time",
+    "description": "资深全栈开发者",
+    "preferred_languages": [
+      "Chinese"
+    ],
+    "created_at": "2026-06-28T06:17:37.287625"
+  }
+]

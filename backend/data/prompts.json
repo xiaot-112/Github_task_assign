@@ -1,0 +1,15 @@
+[
+  {
+    "id": "prompt_1782627461.92958",
+    "name": "任务匹配模板",
+    "description": "用于任务与贡献者匹配的提示词",
+    "template": "你是一个任务分配助手。请根据以下信息进行分析：\n\n任务描述：{task_description}\n所需技能：{required_skills}\n\n贡献者技能：{contributor_skills}\n经验水平：{experience_level}\n\n请分析匹配度并给出推荐理由。",
+    "variables": [
+      "task_description",
+      "required_skills",
+      "contributor_skills",
+      "experience_level"
+    ],
+    "created_at": "2026-06-28T06:17:41.929593"
+  }
+]
