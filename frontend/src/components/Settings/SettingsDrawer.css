@@ -1,0 +1,40 @@
+.settings-drawer .ant-drawer-body {
+  padding: 0;
+}
+
+.settings-drawer .ant-tabs {
+  height: 100%;
+}
+
+.settings-drawer .ant-tabs-content-holder {
+  height: calc(100% - 46px);
+  overflow-y: auto;
+}
+
+.settings-drawer .ant-tabs-tabpane {
+  padding: 24px;
+}
+
+/* 滚动条样式 */
+.settings-drawer .ant-tabs-content-holder::-webkit-scrollbar {
+  width: 6px;
+}
+
+.settings-drawer .ant-tabs-content-holder::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.settings-drawer .ant-tabs-content-holder::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.settings-drawer .ant-tabs-content-holder::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+@media (max-width: 768px) {
+  .settings-drawer {
+    width: 100% !important;
+  }
+}

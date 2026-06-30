@@ -7,17 +7,24 @@ import AppHeader from './components/Layout/AppHeader';
 import { Layout } from 'antd';
 import './index.css';
 
-const { Container } = Layout;
+const { Content } = Layout;
 
 function App() {
-  const fetchConversations = useChatStore(state => state.fetchConversations);
-  const conversations = useChatStore(state => state.conversations);
-  const currentConversationId = useChatStore(state => state.currentConversationId);
-  const createConversation = useChatStore(state => state.createConversation);
-  const selectConversation = useChatStore(state => state.selectConversation);
+  const { 
+    conversations, 
+    currentConversationId, 
+    messages,
+    fetchConversations, 
+    createConversation, 
+    selectConversation,
+    deleteConversation,
+    sendMessage,
+    isLoading
+  } = useChatStore();
   
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = React.useState(false);
+  const [role, setRole] = React.useState('maintainer');
 
   useEffect(() => {
     fetchConversations();
@@ -30,26 +37,42 @@ function App() {
     }
   };
 
+  const handleDeleteConversation = async (id) => {
+    await deleteConversation(id);
+  };
+
+  const handleSendMessage = async (content) => {
+    await sendMessage(content);
+  };
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <AppHeader 
+        onMenuClick={() => setSidebarCollapsed(!sidebarCollapsed)}
         onNewConversation={handleNewConversation}
         onSettingsClick={() => setSettingsOpen(true)}
-        onCollapseToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
+        role={role}
+        onRoleChange={setRole}
       />
       <Layout>
-        {!sidebarCollapsed && (
-          <ChatSidebar 
-            conversations={conversations}
-            currentConversationId={currentConversationId}
-            onSelectConversation={selectConversation}
-            onNewConversation={handleNewConversation}
+        <ChatSidebar 
+          conversations={conversations}
+          currentConversationId={currentConversationId}
+          onSelectConversation={selectConversation}
+          onNewConversation={handleNewConversation}
+          onDeleteConversation={handleDeleteConversation}
+          collapsed={sidebarCollapsed}
+        />
+        <Content>
+          <ChatContainer 
+            messages={messages}
+            onSendMessage={handleSendMessage}
+            isLoading={isLoading}
           />
-        )}
-        <ChatContainer />
+        </Content>
       </Layout>
       <SettingsDrawer 
-        open={settingsOpen} 
+        visible={settingsOpen}
         onClose={() => setSettingsOpen(false)} 
       />
     </Layout>

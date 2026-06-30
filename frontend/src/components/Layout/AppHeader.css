@@ -1,0 +1,59 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background: #001529;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  color: white;
+  font-size: 18px;
+}
+
+.menu-button:hover {
+  color: #1890ff;
+}
+
+.header-center .ant-btn {
+  min-width: 120px;
+}
+
+.header-right .ant-btn-primary {
+  background: #1890ff;
+  border-color: #1890ff;
+}
+
+.header-right .ant-btn-primary:hover {
+  background: #40a9ff;
+  border-color: #40a9ff;
+}
+
+@media (max-width: 768px) {
+  .header-center {
+    display: none;
+  }
+
+  .app-header {
+    padding: 0 12px;
+  }
+
+  .logo h4 {
+    font-size: 16px !important;
+  }
+}
